@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automação de Seguidores</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="image.png">
+</head>
+<body>
+    <!-- Botão de alternância de tema -->
+    <div class="theme-switch" id="themeSwitch">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Barra de navegação fixa -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="branca-semfundo-removebg-preview.png" alt="Logo Automação" class="logo-image light-theme">
+                <img src="preta-semfundo-removebg-preview.png" alt="Logo Automação" class="logo-image dark-theme">
+            </div>
+            <div class="nav-links">
+                <a href="#inicio">Início</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#pacotes">Pacotes</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="#" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Suporte</a>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Hero com vídeo de fundo -->
+    <section id="inicio" class="hero">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-social-media-icons-12-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Impulsione Sua Presença Digital</h1>
+                <p class="subtitle">Crescimento orgânico e seguro para suas redes sociais</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="number" data-target="10000">0</span>
+                        <span class="label">Clientes Satisfeitos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number" data-target="5">0</span>
+                        <span class="label">Anos no Mercado</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number" data-target="99">0</span>
+                        <span class="label">Taxa de Entrega</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#pacotes" class="cta-button primary">Começar Agora <i class="fas fa-arrow-right"></i></a>
+                    <a href="#como-funciona" class="cta-button secondary">Como Funciona <i class="fas fa-play"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Benefícios com ícones animados -->
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por que escolher nossa plataforma?</h2>
+                <p>Oferecemos as melhores soluções para seu crescimento digital</p>
+            </div>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Entrega em 2 Minutos</h4>
+                    <p>Resultados imediatos para seu perfil começar a crescer</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Plataforma Segura</h4>
+                    <p>Seus dados protegidos com a mais alta tecnologia</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h4>Suporte WhatsApp</h4>
+                    <p>Atendimento personalizado 24/7 via WhatsApp</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Confiável desde 2018</h4>
+                    <p>Anos de experiência e milhares de clientes satisfeitos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Como Funciona -->
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Como Funciona</h2>
+                <p>Processo simples e rápido para começar</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Escolha seu pacote</h3>
+                    <p>Selecione o melhor plano para suas necessidades</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Faça o pagamento</h3>
+                    <p>Processo seguro e rápido com várias opções</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Forneça seu perfil</h3>
+                    <p>Digite seu usuário do Instagram</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Veja os resultados</h3>
+                    <p>Acompanhe seu crescimento em tempo real</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Pacotes (mantida a estrutura anterior com melhorias visuais) -->
+    <section id="pacotes" class="packages">
+        <div class="container">
+            <h2>Pacotes</h2>
+            <div class="package-grid">
+                <div class="package-item">
+                    <div class="package-header">
+                        <span class="package-title">Básico</span>
+                        <h3>R$ 12,99</h3>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 100 Seguidores</li>
+                        <li><i class="fas fa-check"></i> Entrega em 2 minutos</li>
+                        <li><i class="fas fa-check"></i> Seguidores reais</li>
+                        <li><i class="fas fa-check"></i> Suporte 24/7</li>
+                    </ul>
+                    <a href="#" class="package-button">Ver pacote</a>
+                </div>
+                <div class="package-item popular">
+                    <span class="popular-tag">Mais Popular</span>
+                    <div class="package-header">
+                        <span class="package-title">Premium</span>
+                        <h3>R$ 19,99</h3>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 300 Seguidores</li>
+                        <li><i class="fas fa-check"></i> Entrega em 2 minutos</li>
+                        <li><i class="fas fa-check"></i> Seguidores reais</li>
+                        <li><i class="fas fa-check"></i> Suporte 24/7</li>
+                        <li><i class="fas fa-check"></i> Garantia de reposição</li>
+                    </ul>
+                    <a href="#" class="package-button">Ver pacote</a>
+                </div>
+                <div class="package-item">
+                    <div class="package-header">
+                        <span class="package-title">Profissional</span>
+                        <h3>R$ 29,99</h3>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 500 Seguidores</li>
+                        <li><i class="fas fa-check"></i> Entrega em 2 minutos</li>
+                        <li><i class="fas fa-check"></i> Seguidores reais</li>
+                        <li><i class="fas fa-check"></i> Suporte 24/7</li>
+                        <li><i class="fas fa-check"></i> Garantia vitalícia</li>
+                    </ul>
+                    <a href="#" class="package-button">Ver pacote</a>
+                </div>
+                <div class="package-item">
+                    <div class="package-header">
+                        <span class="package-title">Ultra</span>
+                        <h3>R$ 79,99</h3>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 2000 Seguidores</li>
+                        <li><i class="fas fa-check"></i> Entrega em 2 minutos</li>
+                        <li><i class="fas fa-check"></i> Seguidores reais</li>
+                        <li><i class="fas fa-check"></i> Suporte VIP</li>
+                        <li><i class="fas fa-check"></i> Garantia vitalícia</li>
+                        <li><i class="fas fa-check"></i> Consultoria grátis</li>
+                    </ul>
+                    <a href="#" class="package-button">Ver pacote</a>
+                </div>
+                <div class="package-item">
+                    <div class="package-header">
+                        <span class="package-title">Master</span>
+                        <h3>R$ 149,99</h3>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 5000 Seguidores</li>
+                        <li><i class="fas fa-check"></i> Entrega em 2 minutos</li>
+                        <li><i class="fas fa-check"></i> Seguidores reais</li>
+                        <li><i class="fas fa-check"></i> Suporte VIP</li>
+                        <li><i class="fas fa-check"></i> Garantia vitalícia</li>
+                        <li><i class="fas fa-check"></i> Consultoria mensal</li>
+                        <li><i class="fas fa-check"></i> Relatório de crescimento</li>
+                    </ul>
+                    <a href="#" class="package-button">Ver pacote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section id="depoimentos" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que nossos clientes dizem</h2>
+                <p>Histórias reais de crescimento e sucesso</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Incrível! Meus seguidores aumentaram em 200% em apenas uma semana."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/50" alt="Cliente">
+                            <div class="author-info">
+                                <h4>João Silva</h4>
+                                <span>Influencer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"O suporte é excelente e a entrega é realmente rápida. Recomendo!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/50" alt="Cliente">
+                            <div class="author-info">
+                                <h4>Maria Santos</h4>
+                                <span>Empreendedora</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção FAQ Expandida -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre nossos serviços</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como funciona o processo de entrega?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nosso sistema é totalmente automatizado. Após a confirmação do pagamento, os seguidores começam a ser entregues em até 2 minutos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Os seguidores são reais?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, trabalhamos apenas com contas reais e ativas para garantir a qualidade do serviço.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Existe garantia de reposição?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oferecemos garantia de reposição em todos os nossos pacotes por até 30 dias após a compra.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Entre em Contato</h2>
+                    <p>Estamos aqui para ajudar você a crescer nas redes sociais</p>
+                    <div class="contact-methods">
+                        <a href="#" class="contact-method">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="#" class="contact-method">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Seu Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Seu Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Sua Mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Melhorado -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="preta-semfundo-removebg-preview.png" alt="Logo Automação" class="footer-logo-image light-theme">
+                    <img src="preta-semfundo-removebg-preview.png" alt="Logo Automação" class="footer-logo-image dark-theme">
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <a href="#inicio">Início</a>
+                    <a href="#pacotes">Pacotes</a>
+                    <a href="#beneficios">Benefícios</a>
+                    <a href="#contato">Contato</a>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@automacao.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Automação de Seguidores. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
