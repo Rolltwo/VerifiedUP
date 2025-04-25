@@ -102,27 +102,68 @@ faqItems.forEach(item => {
     });
 });
 
-// Formulário de contato
+// Formulário de contato com EmailJS
 const contactForm = document.getElementById('contactForm');
+const submitButton = contactForm.querySelector('.submit-button');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Aqui você pode adicionar a lógica para enviar o formulário
-    const formData = new FormData(contactForm);
-    console.log('Formulário enviado:', Object.fromEntries(formData));
+    // Desabilita o botão e mostra o spinner
+    submitButton.disabled = true;
+    submitButton.classList.add('loading');
     
-    // Feedback visual
-    const submitButton = contactForm.querySelector('.submit-button');
-    const originalText = submitButton.innerText;
-    submitButton.innerText = 'Mensagem Enviada!';
-    submitButton.style.backgroundColor = '#25D366';
-    
-    setTimeout(() => {
-        submitButton.innerText = originalText;
-        submitButton.style.backgroundColor = '';
+    // Preparar os parâmetros do template
+    const templateParams = {
+        from_name: this.user_name.value,
+        from_email: this.user_email.value,
+        message: this.message.value
+    };
+
+    // Enviar o email
+    emailjs.send(
+        'service_nb0ex4i', // Service ID do EmailJS
+        'template_oo2fkeq', // Template ID do EmailJS
+        templateParams
+    )
+    .then(function() {
+        // Sucesso
+        submitButton.classList.remove('loading');
+        submitButton.innerHTML = '<span>Mensagem Enviada!</span>';
+        submitButton.style.backgroundColor = '#25D366';
         contactForm.reset();
-    }, 3000);
+        
+        // Resetar o botão após 3 segundos
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.style.backgroundColor = '';
+            submitButton.innerHTML = `
+                <span>Enviar Mensagem</span>
+                <div class="loading-spinner" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+            `;
+        }, 3000);
+    })
+    .catch(function(error) {
+        // Erro
+        console.error('Erro ao enviar email:', error);
+        submitButton.classList.remove('loading');
+        submitButton.innerHTML = '<span>Erro ao enviar. Tente novamente!</span>';
+        submitButton.style.backgroundColor = '#ff4444';
+        
+        // Resetar o botão após 3 segundos
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.style.backgroundColor = '';
+            submitButton.innerHTML = `
+                <span>Enviar Mensagem</span>
+                <div class="loading-spinner" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+            `;
+        }, 3000);
+    });
 });
 
 // Navbar fixa com efeito de scroll

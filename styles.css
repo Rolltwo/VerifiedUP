@@ -630,6 +630,7 @@ body {
     resize: vertical;
 }
 
+/* Contact Form */
 .submit-button {
     width: 100%;
     padding: 15px;
@@ -640,10 +641,41 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
 }
 
 .submit-button:hover {
     background: var(--secondary-color);
+}
+
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.loading-spinner {
+    display: none;
+}
+
+.loading-spinner i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.submit-button.loading .loading-spinner {
+    display: inline-block;
+}
+
+.submit-button.loading span {
+    display: none;
 }
 
 /* Footer */
