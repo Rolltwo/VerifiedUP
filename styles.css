@@ -147,7 +147,7 @@ body {
     background: var(--bg-card);
     padding: 15px 0;
     box-shadow: var(--shadow-sm);
-    z-index: 100;
+    z-index: 1000;
     transition: var(--transition);
 }
 
@@ -196,10 +196,6 @@ body {
     transition: var(--transition);
 }
 
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
 .nav-buttons {
     display: flex;
     align-items: center;
@@ -230,6 +226,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 5px;
+    z-index: 1001;
 }
 
 .menu-toggle span {
@@ -238,6 +235,43 @@ body {
     height: 2px;
     background: var(--text-primary);
     transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--bg-card);
+        padding: 80px 20px 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        z-index: 1000;
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
 }
 
 /* Hero Section */
@@ -680,10 +714,55 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--bg-dark);
-    color: var(--text-light);
+    /* Altura determinada pelo conteúdo e padding */
+    height: auto; /* Garantir que a altura seja automática */
     padding: 80px 0 40px;
+    box-shadow: var(--shadow-sm); /* Adicionar sombra sutil */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para cor */
 }
+
+/* Estilos para links no footer */
+.footer-links a,
+.social-links a {
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição suave para cor dos links */
+}
+
+/* Tema claro: Cor de fundo azul e texto claro */
+html:not([data-theme="dark"]) .footer {
+    background-color: #1f56f2 !important; /* Usar !important para garantir a prioridade */
+    color: var(--text-light) !important; /* Garantir cor do texto clara */
+}
+
+/* Tema claro: Cor dos links e hover */
+html:not([data-theme="dark"]) .footer-links a,
+html:not([data-theme="dark"]) .social-links a {
+    color: var(--text-light) !important; /* Links brancos no tema claro */
+}
+
+html:not([data-theme="dark"]) .footer-links a:hover,
+html:not([data-theme="dark"]) .social-links a:hover {
+    color: rgba(255, 255, 255, 0.8) !important; /* Hover suave nos links */
+}
+
+/* Tema escuro: Cor de fundo, texto e links */
+[data-theme="dark"] .footer {
+    background-color: var(--bg-dark) !important; /* Cor do tema escuro */
+    color: var(--text-light) !important; /* Cor do texto clara */
+}
+
+[data-theme="dark"] .footer-links a,
+[data-theme="dark"] .social-links a {
+    color: var(--text-light) !important; /* Links brancos no tema escuro */
+}
+
+[data-theme="dark"] .footer-links a:hover,
+[data-theme="dark"] .social-links a:hover {
+    color: var(--primary-color) !important; /* Hover com a cor primária do tema */
+}
+
+/* Remover regras de footer anteriores menos específicas se existirem */
+.footer[style] { background: none !important; color: inherit !important; } /* Limpar possíveis estilos inline */
 
 .footer-content {
     display: grid;
@@ -994,4 +1073,30 @@ body {
 /* Animação de transição de tema */
 body * {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Tema claro - aplicar cor azul apenas quando data-theme is NOT dark */
+html:not([data-theme="dark"]) .navbar {
+    background: #1f56f2;
+}
+
+html:not([data-theme="dark"]) .nav-links a {
+    color: var(--text-light);
+}
+
+html:not([data-theme="dark"]) .nav-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Tema escuro */
+[data-theme="dark"] .navbar {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .nav-links a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .nav-links a:hover {
+    color: var(--primary-color);
 } 

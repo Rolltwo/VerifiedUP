@@ -15,10 +15,30 @@ themeSwitch.addEventListener('click', () => {
 // Menu mobile
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
+const menuLinks = document.querySelectorAll('.nav-links a');
 
+// Função para fechar o menu
+const closeMenu = () => {
+    navLinks.classList.remove('active');
+    menuToggle.classList.remove('active');
+};
+
+// Toggle do menu ao clicar no botão
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     menuToggle.classList.toggle('active');
+});
+
+// Fechar menu ao clicar em um link
+menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+// Fechar menu ao clicar fora
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMenu();
+    }
 });
 
 // Contador de estatísticas
