@@ -44,15 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedService === 'tiktok-seguidores') {
             precoPorDez = 0.16; // R$ 0.16 for TikTok
             minQuantity = 10; // TikTok min quantity
-            maxQuantity = 100000; // TikTok max quantity
+            maxQuantity = 1000000; // TikTok max quantity
         } else if (selectedService === 'youtube-visualizacoes') {
             precoPorDez = 0.20; // R$ 0.20 for YouTube
             minQuantity = 100; // YouTube min quantity
-            maxQuantity = 1000000; // YouTube max quantity
+            maxQuantity = 10000000; // YouTube max quantity
         } else {
             precoPorDez = 0.15; // R$ 0.15 for other services (e.g., Instagram)
             minQuantity = 10; // Default min quantity
-            maxQuantity = 100000; // Default max quantity
+            maxQuantity = 1000000; // Default max quantity
         }
 
         // Update the min/max display text
@@ -97,10 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (selectedService === 'youtube-visualizacoes') {
             currentMinQuantity = 100;
-            currentMaxQuantity = 1000000;
+            currentMaxQuantity = 10000000;
         } else {
             currentMinQuantity = 10;
-            currentMaxQuantity = 100000;
+            currentMaxQuantity = 1000000;
         }
 
         if (isNaN(quantidade) || quantidade < currentMinQuantity) {
