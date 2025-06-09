@@ -1,0 +1,199 @@
+/* Estilos para a seção de seleção de quantidade */
+.order-form {
+    background-color: #ffffff !important; /* Fundo branco limpo */
+    padding: 30px !important; /* Mais padding */
+    border-radius: 12px !important; /* Cantos mais arredondados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important; /* Sombra mais suave e profunda */
+    margin-top: 30px !important; /* Mais espaço acima do formulário */
+    border: 1px solid #e0e0e0 !important; /* Borda sutil */
+}
+
+.order-form .input-group {
+    margin-bottom: 20px !important; /* Mais espaço entre os grupos de input */
+}
+
+.order-form label {
+    display: block !important;
+    margin-bottom: 10px !important; /* Mais espaço abaixo do label */
+    font-weight: 600 !important; /* Mais negrito para o label */
+    color: #444 !important; /* Cor de texto mais escura para os labels */
+    font-size: 1.05em !important; /* Levemente maior */
+}
+
+.order-form input[type="text"], 
+.order-form input[type="number"],
+.order-form select {
+    width: 100% !important; /* Ocupa a largura total */
+    padding: 12px 15px !important; /* Mais padding interno */
+    border: 1px solid #d0d0d0 !important; /* Borda mais clara */
+    border-radius: 8px !important; /* Cantos arredondados */
+    font-size: 1.1em !important; /* Fonte um pouco maior */
+    color: #333 !important; /* Cor de texto padrão */
+    background-color: #fefefe !important; /* Fundo levemente off-white */
+    box-sizing: border-box !important;
+    transition: all 0.3s ease !important; /* Transição suave */
+}
+
+.order-form input[type="text"]::placeholder {
+    color: #aaa !important;
+}
+
+.order-form input[type="number"]::-webkit-outer-spin-button,
+.order-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+.order-form input[type="number"] {
+    -moz-appearance: textfield !important;
+}
+
+.order-form input[type="text"]:focus,
+.order-form input[type="number"]:focus,
+.order-form select:focus {
+    outline: none !important;
+    border-color: #7b4397 !important; /* Um tom de roxo mais vibrante ao focar */
+    box-shadow: 0 0 0 3px rgba(123, 67, 151, 0.2) !important; /* Anel de foco suave */
+    background-color: #fff !important; /* Fundo branco ao focar */
+}
+
+.order-form small {
+    display: block !important;
+    margin-top: 8px !important; /* Mais espaço acima da nota */
+    color: #666 !important; /* Cor de texto mais neutra */
+    font-size: 0.85em !important; /* Levemente menor */
+}
+
+.order-form .btn-enviar {
+    display: block !important;
+    width: 100% !important;
+    padding: 15px 20px !important; /* Mais padding no botão */
+    background: linear-gradient(to right, #7b4397, #dc2430) !important; /* Gradiente vibrante */
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important; /* Cantos arredondados */
+    font-size: 1.2em !important; /* Fonte maior no botão */
+    font-weight: 700 !important; /* Mais negrito */
+    cursor: pointer !important;
+    transition: all 0.3s ease !important; /* Transição suave */
+    margin-top: 30px !important; /* Mais espaço acima do botão */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important; /* Sombra para o botão */
+}
+
+.order-form .btn-enviar:hover {
+    transform: translateY(-3px) !important; /* Leve elevação ao passar o mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important; /* Sombra mais intensa no hover */
+    opacity: 0.9 !important; /* Leve opacidade */
+}
+
+.order-form .btn-enviar:active {
+    transform: translateY(0) !important; /* Retorna à posição original ao clicar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important; /* Sombra menor ao clicar */
+}
+
+/* Layout específico para campos Quantidade e Valor se estiverem na mesma linha, se necessário */
+/* Atualmente, o HTML os coloca em input-group separados, resultando em empilhamento vertical */
+
+/* Estilos para a seção de busca e seleção */
+.search-section {
+    background-color: #ffffff !important; /* Fundo branco limpo */
+    padding: 30px !important; /* Mais padding */
+    border-radius: 12px !important; /* Cantos mais arredondados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important; /* Sombra mais suave e profunda */
+    margin-bottom: 30px !important; /* Espaço abaixo da seção de busca */
+    border: 1px solid #e0e0e0 !important; /* Borda sutil */
+}
+
+.search-section .input-group {
+    margin-bottom: 20px !important;
+    position: relative !important; /* Para posicionar o ícone */
+}
+
+.search-section .input-group:last-child {
+    margin-bottom: 0 !important; /* Remover margin-bottom do último grupo */
+}
+
+.search-section .input-group i {
+    position: absolute !important;
+    left: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #888 !important; /* Cor do ícone */
+    font-size: 1.1em !important;
+    pointer-events: none !important; /* Garante que o ícone não interfira no input */
+}
+
+.search-section .input-group input[type="text"], 
+.search-section .input-group select {
+    width: 100% !important;
+    padding: 12px 15px 12px 45px !important; /* Padding extra para o ícone no input de busca */
+    border: 1px solid #d0d0d0 !important;
+    border-radius: 8px !important;
+    font-size: 1.1em !important;
+    color: #333 !important;
+    background-color: #fefefe !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s ease !important;
+}
+
+.search-section .input-group select {
+    padding-left: 15px !important; /* Resetar padding para selects sem ícone */
+    -webkit-appearance: none !important; /* Remover estilo padrão do select no Webkit */
+    -moz-appearance: none !important; /* Remover estilo padrão do select no Firefox */
+    appearance: none !important; /* Remover estilo padrão do select */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important; /* Ícone de seta */
+    background-repeat: no-repeat !important;
+    background-position: right 15px center !important;
+    background-size: 1em !important;
+}
+
+.search-section .input-group input[type="text"]:focus,
+.search-section .input-group select:focus {
+    outline: none !important;
+    border-color: #7b4397 !important;
+    box-shadow: 0 0 0 3px rgba(123, 67, 151, 0.2) !important;
+    background-color: #fff !important;
+}
+
+.search-section label {
+    display: block !important;
+    margin-bottom: 10px !important;
+    font-weight: 600 !important;
+    color: #444 !important;
+    font-size: 1.05em !important;
+}
+
+/* Estilos para a seção de descrição */
+.description-section {
+    background-color: #ffffff !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 30px !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+.description-section h3 {
+    color: #7b4397 !important; /* Título em roxo */
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    border-bottom: 2px solid #f0f0f0 !important; /* Linha divisória suave */
+    padding-bottom: 10px !important;
+    font-size: 1.4em !important;
+}
+
+.description-section p {
+    color: #555 !important;
+    line-height: 1.8 !important;
+    margin-bottom: 10px !important;
+}
+
+.description-section ol {
+    padding-left: 25px !important;
+    margin-bottom: 15px !important;
+}
+
+.description-section ol li {
+    color: #555 !important;
+    margin-bottom: 8px !important;
+    line-height: 1.6 !important;
+} 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha a Quantidade de Seguidores</title>
+    <link rel="icon" type="image/png" sizes="40x40" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quantidade-seguidores.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="image.png">
+    <!-- Adicionar SDK do EmailJS antes do fechamento do head -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("9A3gNoCiV94r_eLt8"); // Public Key do EmailJS
+        })();
+    </script>
+</head>
+<body>
+    <!-- Botão de alternância de tema -->
+    <div class="theme-switch" id="themeSwitch">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Barra de navegação fixa -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="verified-azul.png" alt="Logo Automação" class="logo-image light-theme">
+                <img src="verified-preto.png" alt="Logo Automação" class="logo-image dark-theme">
+            </div>
+            <div class="nav-links">
+                <a href="index.html#inicio">Início</a>
+                <a href="index.html#beneficios">Benefícios</a>
+                <a href="index.html#pacotes">Pacotes</a>
+                <a href="index.html#depoimentos">Depoimentos</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#contato">Contato</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="#" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Suporte</a>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container content-section" style="margin-top: 200px;">
+        <div class="left-column">
+            <div class="search-section">
+                <div class="input-group">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria">
+                        <option value="servicos-brasileiros">Serviços Brasileiros ✨</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="servico">Serviço</label>
+                    <select id="servico">
+                        <option value="3065-seguidores-brasileiros">3065 - Seguidores Brasileiros | R30 | ⭐Premium | ⚡ - R$ 24,57 por 1000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="description-section">
+                <h3>Descrição</h3>
+                <p>Leitura Obrigatória</p>
+                <p>Devido às recentes atualizações do Instagram, é necessário que você desative ou peça ao seu cliente que desative a função de sinalizar seguidores. Segue abaixo como realizar a desativação.</p>
+                <ol>
+                    <li>No app do Instagram, acesse seu perfil e toque em ☰</li>
+                    <li>Agora clique em "Seguir e convidar amigos"</li>
+                    <li>Desative o botão "Sinalizar para análise"</li>
+                </ol>
+                <p>É importante realizar esses procedimentos para garantir que seus seguidores cheguem de forma ágil e eficiente, a não desativação dessa função poderá causar lentidão, e até mesmo podendo não chegar completamente.</p>
+                <p>Leia a mensagem acima para evitar dores de cabeça, e evitar que você não receba todos os seguidores comprados, a não realização do procedimento acima poderá levar na conclusão prematura do seu pedido sem ter chegado tudo, e não prestaremos nenhuma garantia quanto a isso, por isso, reforçamos que é importante realizar os procedimentos descritos acima.</p>
+            </div>
+
+            <div class="order-form">
+                <div class="input-group">
+                    <label for="link">Link</label>
+                    <input type="text" id="link" placeholder="Informe o link ou usuário">
+                </div>
+                <div class="input-group">
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" id="quantidade" min="10">
+                    <small>Mín.: 10 - Máx.: 100 000</small>
+                </div>
+                <div class="input-group">
+                    <label for="valor">Valor</label>
+                    <input type="text" id="valor" value="R$ 0,15" readonly>
+                </div>
+                <button class="btn-enviar">Enviar</button>
+            </div>
+        </div>
+
+        
+    </main>
+
+    <!-- Footer Melhorado -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="verified-azul.png" alt="Logo Automação" class="footer-logo-image light-theme">
+                    <img src="verified-preto.png" alt="Logo Automação" class="footer-logo-image dark-theme">
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <a href="index.html#inicio">Início</a>
+                    <a href="index.html#pacotes">Pacotes</a>
+                    <a href="index.html#beneficios">Benefícios</a>
+                    <a href="index.html#contato">Contato</a>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@automacao.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Automação de Seguidores. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="novo-sistema-script.js"></script>
+    <script>
+        document.querySelector('.btn-enviar').addEventListener('click', function() {
+            const link = document.getElementById('link').value;
+            const quantidade = document.getElementById('quantidade').value;
+            const valor = document.getElementById('valor').value;
+            const servico = document.getElementById('servico').value;
+
+            if (!link || !quantidade) {
+                alert('Por favor, preencha todos os campos obrigatórios!');
+                return;
+            }
+
+            const mensagem = `*Novo Pedido de Seguidores*%0A%0A` +
+                           `*Link:* ${link}%0A` +
+                           `*Quantidade:* ${quantidade}%0A` +
+                           `*Valor:* ${valor}%0A` +
+                           `*Serviço:* ${servico}`;
+
+            const numeroWhatsApp = '5511976405998'; // Substitua pelo número correto
+            const url = `https://wa.me/${5511976405998}?text=${teste}`;
+            
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html> 

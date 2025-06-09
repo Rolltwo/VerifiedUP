@@ -251,4 +251,54 @@ document.querySelectorAll('.cta-button, .package-button, .support-button').forEa
     button.addEventListener('mouseleave', () => {
         button.style.transform = 'translateY(0)';
     });
-}); 
+});
+
+// Seção de Quantidade Customizada
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM completamente carregado. Inicializando script de quantidade.');
+    const quantityInput = document.getElementById('follower-quantity');
+    const orderValueInput = document.getElementById('order-value');
+    const buyButton = document.querySelector('.custom-quantity .cta-button');
+
+    // Preço por seguidor (baseado em 10 seguidores por R$ 0.15)
+    const pricePerFollower = 0.15 / 10; // R$ 0.015 por seguidor
+
+    // Função para calcular e atualizar o valor
+    const updateOrderValue = () => {
+        console.log('updateOrderValue chamada.');
+        // Obter a quantidade diretamente do input, tratando como 0 se não for um número válido
+        let quantity = parseInt(quantityInput.value) || 0;
+        console.log('Quantidade:', quantity);
+        
+        const calculatedValue = (quantity * pricePerFollower).toFixed(2); // Calcula e formata com 2 casas decimais
+        console.log('Valor calculado:', calculatedValue);
+        orderValueInput.value = `R$ ${calculatedValue.replace('.', ',')}`; // Formatar para moeda Brasileira (R$ XX,XX)
+        console.log('Valor exibido:', orderValueInput.value);
+    };
+
+    // Atualizar o valor ao mudar o input de quantidade
+    if (quantityInput && orderValueInput) {
+        console.log('Inputs de quantidade e valor encontrados. Adicionando event listener.');
+        quantityInput.addEventListener('input', updateOrderValue);
+        // Chamar a função no carregamento da página para definir o valor inicial
+        console.log('Chamando updateOrderValue no carregamento da página.');
+        updateOrderValue();
+    } else {
+        console.log('Inputs de quantidade ou valor NÃO encontrados no DOM.');
+    }
+
+    // Adicionar evento de clique ao botão Enviar
+    if (buyButton && quantityInput && orderValueInput) {
+        console.log('Botão de comprar, quantidade e valor inputs encontrados. Adicionando event listener de clique.');
+        buyButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedQuantity = quantityInput.value;
+            const calculatedValue = orderValueInput.value;
+            console.log(`Comprar ${selectedQuantity} seguidores por ${calculatedValue}`);
+            // TODO: Adicionar aqui a lógica de compra, redirecionamento, etc. com a quantidade e valor
+            // Por enquanto, apenas loga as informações selecionadas.
+        });
+    } else {
+        console.log('Botão de comprar, quantidade ou valor inputs NÃO encontrados no DOM.');
+    }
+});
