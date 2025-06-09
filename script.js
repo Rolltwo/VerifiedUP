@@ -2,13 +2,27 @@
 const themeSwitch = document.getElementById('themeSwitch');
 const htmlElement = document.documentElement;
 
+// Carregar o tema salvo do localStorage ao carregar a página
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    if (savedTheme === 'dark') {
+        htmlElement.setAttribute('data-theme', 'dark');
+        themeSwitch.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        htmlElement.removeAttribute('data-theme');
+        themeSwitch.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+}
+
 themeSwitch.addEventListener('click', () => {
     if (htmlElement.getAttribute('data-theme') === 'dark') {
         htmlElement.removeAttribute('data-theme');
         themeSwitch.innerHTML = '<i class="fas fa-moon"></i>';
+        localStorage.setItem('theme', 'light'); // Salva o tema claro
     } else {
         htmlElement.setAttribute('data-theme', 'dark');
         themeSwitch.innerHTML = '<i class="fas fa-sun"></i>';
+        localStorage.setItem('theme', 'dark'); // Salva o tema escuro
     }
 });
 
