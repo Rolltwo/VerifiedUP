@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (selectedService === 'youtube-visualizacoes') {
             precoPorDez = 0.20; // R$ 0.20 for YouTube
             minQuantity = 100; // YouTube min quantity
-            maxQuantity = 10000000; // YouTube max quantity
+            maxQuantity = 1000000; // YouTube max quantity
         } else {
             precoPorDez = 0.15; // R$ 0.15 for other services (e.g., Instagram)
             minQuantity = 10; // Default min quantity
