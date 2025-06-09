@@ -6497,6 +6497,14 @@ html:not([data-theme="dark"]) .nav-links a:hover {
 }
 
 [data-theme="dark"] .custom-quantity .cta-button {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+[data-theme="dark"] .custom-quantity .cta-button:hover {
+    opacity: 0.9;
+    transform: none;
+}
+
 /* Reset e estilos gerais */
 * {
     margin: 0;
@@ -17704,6 +17712,3 @@ html:not([data-theme="dark"]) .nav-links a:hover {
     font-weight: 600;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
-/* Tema escuro - ajustes para pacotes */
-    display
