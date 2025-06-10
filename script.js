@@ -316,3 +316,20 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Botão de comprar, quantidade ou valor inputs NÃO encontrados no DOM.');
     }
 });
+// Redirecionamento para WhatsApp ao selecionar pacote
+
+document.querySelectorAll('.package-button').forEach((button) => {
+    button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const packageItem = button.closest('.package-item');
+        const packageTitle = packageItem.querySelector('.package-title').innerText;
+        const packagePrice = packageItem.querySelector('h3').innerText;
+
+        // Defina o link da imagem de acordo com o plano
+        // Removido o bloco que define imageUrl e adiciona o link da imagem na mensagem
+        const message = `Olá! Tenho interesse no pacote ${packageTitle} (${packagePrice}). Como posso pagar?`;
+        const phoneNumber = '5533998632041';
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+    });
+});
