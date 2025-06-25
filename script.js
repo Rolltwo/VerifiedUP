@@ -55,26 +55,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Contador de estatísticas
-const stats = document.querySelectorAll('.number');
-
-stats.forEach(stat => {
-    const target = parseInt(stat.getAttribute('data-target'));
-    const increment = target / 200;
-    
-    function updateCount() {
-        const current = parseInt(stat.innerText);
-        if (current < target) {
-            stat.innerText = Math.ceil(current + increment);
-            setTimeout(updateCount, 10);
-        } else {
-            stat.innerText = target;
-        }
-    }
-    
-    updateCount();
-});
-
 // Animação suave ao rolar
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -331,5 +311,31 @@ document.querySelectorAll('.package-button').forEach((button) => {
         const phoneNumber = '5533998632041';
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappURL, '_blank');
+    });
+});
+
+// Contador animado para números
+function animateCounter(element, target, duration = 1800) {
+    let start = 0;
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        element.textContent = Math.floor(progress * (target - start) + start);
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        } else {
+            element.textContent = target;
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.number').forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'));
+        if (!isNaN(target)) {
+            animateCounter(el, target);
+        }
     });
 });
