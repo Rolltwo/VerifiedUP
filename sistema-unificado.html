@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Unificado de Seguidores</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modern.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .unificado-container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            padding: 32px 28px;
+        }
+        .unificado-container h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #7b4397;
+        }
+        .unificado-form label {
+            font-weight: 600;
+            margin-top: 18px;
+            display: block;
+        }
+        .unificado-form select, .unificado-form input {
+            width: 100%;
+            padding: 12px 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: 1px solid #d0d0d0;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+        .unificado-form .valor {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #7b4397;
+            margin-bottom: 18px;
+        }
+        .unificado-form button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #7b4397, #dc2430);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.15em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .unificado-form button:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="unificado-container">
+        <h2>Comprar Seguidores</h2>
+        <form class="unificado-form" id="formUnificado">
+            <label for="rede">Selecione a Rede Social</label>
+            <select id="rede" name="rede" required>
+                <option value="instagram">Instagram</option>
+                <option value="tiktok">TikTok</option>
+                <option value="youtube">YouTube</option>
+            </select>
+            <label for="pacote">Escolha um pacote</label>
+            <select id="pacote" name="pacote">
+                <option value="">Selecione...</option>
+                <option value="100">Básico - 100 Seguidores (R$ 12,99)</option>
+                <option value="300">Premium - 300 Seguidores (R$ 19,99)</option>
+                <option value="500">Profissional - 500 Seguidores (R$ 29,99)</option>
+                <option value="2000">Ultra - 2000 Seguidores (R$ 79,99)</option>
+                <option value="5000">Master - 5000 Seguidores (R$ 149,99)</option>
+                <option value="personalizado">Personalizado</option>
+            </select>
+            <label for="quantidade">Quantidade de Seguidores</label>
+            <input type="number" id="quantidade" name="quantidade" min="10" step="10" placeholder="Digite a quantidade" required>
+            <div class="valor" id="valorExibido">Valor: R$ 0,00</div>
+            <button type="submit" id="btnEnviarUnificado"><i class="fab fa-whatsapp"></i> Enviar Pedido pelo WhatsApp</button>
+        </form>
+    </div>
+    <script src="sistema-unificado.js"></script>
+</body>
+</html> 

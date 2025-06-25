@@ -301,12 +301,11 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelectorAll('.package-button').forEach((button) => {
     button.addEventListener('click', function (e) {
         e.preventDefault();
+        console.log('Botão Selecionar Pacote clicado'); // Depuração
         const packageItem = button.closest('.package-item');
         const packageTitle = packageItem.querySelector('.package-title').innerText;
         const packagePrice = packageItem.querySelector('h3').innerText;
 
-        // Defina o link da imagem de acordo com o plano
-        // Removido o bloco que define imageUrl e adiciona o link da imagem na mensagem
         const message = `Olá! Tenho interesse no pacote ${packageTitle} (${packagePrice}). Como posso pagar?`;
         const phoneNumber = '5533998632041';
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -338,4 +337,22 @@ document.addEventListener('DOMContentLoaded', () => {
             animateCounter(el, target);
         }
     });
+});
+
+// Dropdown de navegação (Soluções)
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(drop => {
+    const toggle = drop.querySelector('.dropdown-toggle');
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      // Fecha outros dropdowns
+      dropdowns.forEach(d => { if (d !== drop) d.classList.remove('open'); });
+      drop.classList.toggle('open');
+    });
+  });
+  // Fecha dropdown ao clicar fora
+  document.addEventListener('click', () => {
+    dropdowns.forEach(drop => drop.classList.remove('open'));
+  });
 });

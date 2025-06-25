@@ -77,8 +77,7 @@ body {
 [data-theme="dark"] .logo-image.dark-theme { display: block; }
 
 .nav-links {
-    display: flex;
-    gap: 18px;
+    /* display: flex;  // padrão para desktop, controlado pelo media query */
 }
 
 .nav-links a {
@@ -129,13 +128,7 @@ body {
 }
 
 .menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    outline: none;
+    display: none !important;
 }
 
 .menu-toggle span {
@@ -149,12 +142,52 @@ body {
 
 @media (max-width: 900px) {
     .logo-image { width: 90px; }
-    .nav-links { gap: 10px; }
-    .nav-links a { font-size: 0.98em; padding: 4px 8px; }
+    .menu-toggle {
+        display: flex !important;
+    }
+    .nav-links {
+        display: none !important;
+    }
+    .nav-links.active {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        background: var(--bg-dark);
+        z-index: 9999;
+        gap: 0;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        padding: 18px 0 18px 0;
+        align-items: flex-start;
+    }
+    .nav-links.active a {
+        width: 100%;
+        padding: 16px 24px;
+        font-size: 1.1em;
+        border-radius: 0;
+        color: var(--text-primary);
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+        background: none;
+        text-align: left;
+    }
+    .nav-links.active a:last-child {
+        border-bottom: none;
+    }
 }
-@media (max-width: 700px) {
-    .nav-links { display: none; }
-    .menu-toggle { display: flex; }
+@media (min-width: 901px) {
+    .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: none;
+        gap: 18px;
+        align-items: center;
+        box-shadow: none;
+        padding: 0;
+    }
 }
 
 /* Botão de ação principal */
@@ -773,6 +806,24 @@ section + section {
     .testimonial-track { flex-direction: column; gap: 24px; }
     .contact-content { flex-direction: column; gap: 32px; }
     .contact-form, .contact-info { max-width: 100%; }
+    .container {
+        padding: 0 10px;
+    }
+    .stats-hero {
+        flex-direction: column;
+        gap: 24px;
+        margin: 24px 0 0 0;
+    }
+    .stat-card {
+        min-width: unset;
+        width: 100%;
+        padding: 24px 10px;
+    }
+    .footer .footer-content {
+        flex-direction: column;
+        gap: 24px;
+        align-items: stretch;
+    }
 }
 @media (max-width: 600px) {
     .hero { padding-top: 60px; }
@@ -782,6 +833,27 @@ section + section {
     .benefit-item, .package-item, .faq-item, .testimonial-card, .contact-form, .contact-info { padding: 18px 6px; min-width: unset; max-width: 100%; }
     .contact-form { padding: 18px 6px; }
     .contact-methods { flex-direction: column; gap: 14px; }
+    .hero h1, .section-header h2, .packages h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    .hero-content {
+        padding: 18px 0;
+    }
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    .stat-label {
+        font-size: 1em;
+    }
+    .benefit-item, .package-item, .faq-item, .testimonial-card, .contact-form, .contact-info {
+        padding: 14px 4px;
+        min-width: unset;
+        max-width: 100%;
+    }
+    .footer .footer-content {
+        padding: 0 8px;
+    }
 }
 
 /* Ajustar cards, navbar, footer, etc para tema escuro */
@@ -873,4 +945,124 @@ input::placeholder, textarea::placeholder {
 @media (max-width: 700px) {
     .stats-hero { flex-direction: column; gap: 24px; }
     .stat-card { min-width: unset; width: 100%; }
+}
+
+/* Menu hamburguer responsivo */
+.menu-toggle {
+    display: flex !important;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    z-index: 1100;
+}
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+.nav-links {
+    display: none;
+}
+.nav-links.active {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: var(--bg-dark);
+    z-index: 9999;
+    gap: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 18px 0 18px 0;
+    align-items: flex-start;
+}
+.nav-links.active a {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1.1em;
+    border-radius: 0;
+    color: var(--text-primary);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    background: none;
+    text-align: left;
+}
+.nav-links.active a:last-child {
+    border-bottom: none;
+}
+
+/* Dropdown de navegação */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font: inherit;
+  font-weight: 500;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: 0.3s;
+}
+.dropdown-arrow {
+  font-size: 0.8em;
+  margin-left: 2px;
+}
+.dropdown-menu {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+  position: absolute;
+  z-index: 99999;
+}
+.nav-dropdown.open .dropdown-menu {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+.dropdown-menu a {
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 1em;
+  border: none;
+  background: none;
+  transition: 0.3s;
+  border-radius: 0;
+  text-align: left;
+}
+.dropdown-menu a:hover {
+  background: #6e8efb;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .nav-dropdown {
+    width: 100%;
+  }
+  .dropdown-menu {
+    position: static;
+    min-width: unset;
+    box-shadow: none;
+    border-radius: 0;
+    background: var(--bg-dark);
+    padding: 0;
+  }
+  .dropdown-menu a {
+    padding: 16px 24px;
+    width: 100%;
+  }
 } 

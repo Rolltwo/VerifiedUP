@@ -114,4 +114,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial price calculation on page load
     calculatePrice();
+
+    // Adicionar evento de clique para o botão Enviar do novo sistema
+    const btnEnviarNovo = document.querySelector('.btn-enviar-novo');
+    const quantidadeInputNovo = document.getElementById('quantidade-seguidores-input');
+    const valorInputNovo = document.getElementById('valor-pedido-input');
+
+    if (btnEnviarNovo && quantidadeInputNovo && valorInputNovo) {
+        btnEnviarNovo.addEventListener('click', function() {
+            const quantidade = quantidadeInputNovo.value;
+            const valor = valorInputNovo.value;
+
+            if (!quantidade || quantidade < 10) {
+                alert('Por favor, informe uma quantidade válida!');
+                return;
+            }
+
+            const mensagem = `*Novo Pedido de Seguidores (Novo Sistema)*%0A%0A` +
+                            `*Quantidade:* ${quantidade}%0A` +
+                            `*Valor:* ${valor}`;
+            const numeroWhatsApp = '5533998632041';
+            const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+            window.open(url, '_blank');
+        });
+    }
 }); 
