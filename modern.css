@@ -146,7 +146,15 @@ body {
         display: flex !important;
     }
     .nav-links {
-        display: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 18px !important;
+        width: 100% !important;
+        padding: 18px 0 !important;
+        background: var(--bg-card, #fff) !important;
+        position: static !important;
+        box-shadow: none !important;
     }
     .nav-links.active {
         display: flex !important;
@@ -948,7 +956,8 @@ input::placeholder, textarea::placeholder {
 }
 
 /* Menu hamburguer responsivo */
-.menu-toggle {
+@media (max-width: 900px) {
+  .menu-toggle {
     display: flex !important;
     flex-direction: column;
     gap: 4px;
@@ -956,45 +965,56 @@ input::placeholder, textarea::placeholder {
     background: none;
     border: none;
     outline: none;
-    z-index: 1100;
-}
-.menu-toggle span {
+    z-index: 1101;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-toggle span {
     display: block;
     width: 28px;
     height: 3px;
     background: var(--primary-color);
     border-radius: 2px;
-    transition: var(--transition);
-}
-.nav-links {
-    display: none;
-}
-.nav-links.active {
-    display: flex !important;
-    flex-direction: column;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100vw;
-    background: var(--bg-dark);
-    z-index: 9999;
-    gap: 0;
+    transition: 0.3s;
+  }
+  #navLinks {
+    display: none !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+    width: 100vw !important;
+    padding: 32px 0 24px 0 !important;
+    background: var(--bg-card, #232946cc) !important;
+    position: fixed !important;
+    top: 0; left: 0;
+    z-index: 1100;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    padding: 18px 0 18px 0;
-    align-items: flex-start;
+    transition: 0.3s;
+  }
+  #navLinks.active {
+    display: flex !important;
+  }
+  .nav-links a {
+    font-size: 1.18em !important;
+    padding: 14px 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+  }
+  .nav-buttons {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: auto !important;
+    margin-top: 0 !important;
+  }
 }
-.nav-links.active a {
-    width: 100%;
-    padding: 16px 24px;
-    font-size: 1.1em;
-    border-radius: 0;
-    color: var(--text-primary);
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    background: none;
-    text-align: left;
-}
-.nav-links.active a:last-child {
-    border-bottom: none;
+
+@media (min-width: 901px) {
+  .menu-toggle { display: none !important; }
+  #navLinks { display: flex !important; position: static !important; background: none !important; box-shadow: none !important; padding: 0 !important; width: auto !important; }
 }
 
 /* Dropdown de navegação */
@@ -1064,5 +1084,34 @@ input::placeholder, textarea::placeholder {
   .dropdown-menu a {
     padding: 16px 24px;
     width: 100%;
+  }
+}
+
+/* Responsividade para nav-links sem menu hamburguer */
+@media (max-width: 800px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+    width: 100% !important;
+    padding: 18px 0 !important;
+    background: var(--bg-card, #fff) !important;
+    position: static !important;
+    box-shadow: none !important;
+  }
+  .nav-links a {
+    font-size: 1.18em !important;
+    padding: 10px 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+  }
+  .nav-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
   }
 } 
